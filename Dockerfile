@@ -9,8 +9,6 @@ RUN apt-get update && apt-get install -y \
 
 # 3. Directorio de trabajo e instalar requisitos si existieran
 WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt || true
 
 # 4. Copiar los archivos de la aplicación
 COPY . .

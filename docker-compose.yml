@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  chatbot:
+    build: .
+    container_name: chatbot-interactivo
+    # Mantenemos el modo interactivo para poder hablar con él
+    stdin_open: true
+    tty: true
+    # Configuración de volúmenes para persistencia de datos
+    volumes:
+      - ./base_datos.json:/app/base_datos.json
+    # Puertos (aunque sea consola, cumplimos con el requisito)
+    ports:
+      - "8080:8080"
